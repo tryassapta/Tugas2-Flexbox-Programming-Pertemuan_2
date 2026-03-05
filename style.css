@@ -1,0 +1,318 @@
+/* ===== FONT & RESET ===== */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background:#f4f1ea;
+    color:#3e3e3e;
+    line-height:1.8;
+    overflow-x: hidden; /* mencegah scroll horizontal */
+}
+
+/* ===== navbar ===== */
+nav{
+    display:flex;
+    align-items:center;
+    padding:18px 50px;
+    background:#ffffff;
+    box-shadow:0 4px 20px rgba(0,0,0,0.05);
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+nav .nav-name{
+    font-weight:600;
+    color:#3e3e3e;
+    font-size:16px;
+}
+
+nav .nav-links{
+    display:flex;
+    gap:40px;
+    margin-left:auto;
+}
+
+nav a{
+    text-decoration:none;
+    color:#6b6b6b;
+    font-weight:500;
+    position:relative;
+    transition:0.3s;
+}
+
+nav a::after{
+    content:"";
+    position:absolute;
+    width:0%;
+    height:2px;
+    bottom:-5px;
+    left:0;
+    background-color:#b7a27a;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:#3e3e3e;
+}
+
+nav a:hover::after{
+    width:100%;
+}
+
+/* ===== SECTION ===== */
+section{
+    padding:70px 10%;
+}
+
+/* ===== HOME ===== */
+#home{
+    text-align:center;
+}
+
+#home h1{
+    font-family:'Playfair Display', serif; 
+    font-size:38px;
+    font-weight:300;      /* lebih tipis */
+    letter-spacing:2px;   /* sedikit renggang */
+    margin-bottom:20px;
+}
+
+/* ===== ABOUT ===== */
+.about-container{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:50px;
+    flex-wrap:wrap;
+}
+
+.about-text{
+    flex:1;
+    min-width:250px;
+}
+
+.about-image{
+    flex:1;
+    text-align:center;
+}
+
+.about-image img{
+    width:260px;
+    border-radius:20px;
+    box-shadow:0 20px 40px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+.about-image img:hover{
+    transform:scale(1.03);
+    box-shadow:0 30px 60px rgba(0,0,0,0.15);
+}
+
+/* ===== PORTFOLIO CARDS ===== */
+.portfolio-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+    margin-top:20px;
+}
+
+.portfolio-card{
+    background:#ffffff;
+    padding:15px;
+    border-radius:12px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+    transition:0.3s;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+}
+
+.portfolio-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 20px 40px rgba(0,0,0,0.12);
+}
+
+.portfolio-card img.portfolio-img{
+    width:100%;
+    height:150px;
+    object-fit:cover;
+    border-radius:10px;
+    margin-bottom:12px;
+    transition:0.3s;
+}
+
+.portfolio-card img.portfolio-img:hover{
+    transform:scale(1.05);
+}
+
+.portfolio-card h3{
+    font-size:16px;
+    color:#5c4f3a;
+    margin-top:0;
+}
+
+/* ===== SKILLS HORIZONTAL ===== */
+#skills ul{
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    gap:15px;
+    margin-top:20px;
+}
+
+#skills li{
+    background:#ffffff;
+    padding:15px 18px;
+    border-radius:10px;
+    box-shadow:0 8px 25px rgba(0,0,0,0.05);
+    list-style:none;
+    transition:0.2s;
+    flex:1 1 250px;
+    text-align:center;
+}
+
+#skills li:hover{
+    transform:translateY(-3px);
+}
+
+/* Skill title center */
+#skills li strong{
+    display:block;
+    margin-bottom:5px;
+    font-weight:600;
+    text-align:center;
+}
+
+/* ===== CONTACT FULL COLUMN ===== */
+#contact{
+    display:flex;
+    flex-direction:column;
+    gap:30px;
+    width:100%;
+    box-sizing:border-box; /* penting untuk padding */
+}
+
+.contact-form{
+    background:#ffffff;
+    padding:25px;
+    border-radius:10px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.05);
+    width:100%;
+    max-width:100%;
+    box-sizing:border-box;
+}
+
+.input-group{
+    margin-bottom:15px;
+    display:flex;
+    flex-direction:column;
+}
+
+.input-group label{
+    margin-bottom:5px;
+    font-size:14px;
+}
+
+.contact-form input,
+.contact-form textarea{
+    padding:10px;
+    border:1px solid #ddd;
+    border-radius:6px;
+    font-family:inherit;
+    transition:0.2s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus{
+    outline:none;
+    border-color:#b7a27a;
+    box-shadow:0 0 0 3px rgba(183,162,122,0.2);
+    transform:translateY(-2px);
+}
+
+.contact-form button{
+    margin-top:10px;
+    padding:10px;
+    border:none;
+    background:#b7a27a;
+    color:white;
+    border-radius:6px;
+    cursor:pointer;
+    transition:0.2s;
+}
+
+.contact-form button:hover{
+    background:#8c7b5a;
+    transform:translateY(-2px);
+    box-shadow:0 8px 20px rgba(0,0,0,0.1);
+}
+
+#contact ul{
+    background:#ffffff;
+    padding:25px;
+    border-radius:10px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.05);
+    list-style:none;
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    width:100%;
+    max-width:100%;
+    box-sizing:border-box;
+}
+
+#contact li{
+    margin-bottom:0;
+}
+
+#contact a{
+    color:#3e3e3e;
+    text-decoration:none;
+}
+
+#contact a:hover{
+    text-decoration:underline;
+}
+
+/* ===== FOOTER ===== */
+footer{
+    text-align:center;
+    padding:25px;
+    background:#ffffff;
+    font-size:14px;
+    color:#666;
+    margin-top:40px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:768px){
+    .about-container{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .about-image img{
+        width:220px;
+        margin-top:20px;
+    }
+
+    #skills ul{
+        flex-direction:column;
+    }
+
+    /* ===== Contact responsive ===== */
+    #contact,
+    .contact-form,
+    #contact ul{
+        width:100%;
+        max-width:100%;
+        padding:15px;
+        box-sizing:border-box;
+    }
+}
